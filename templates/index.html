@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Model Deployment</title>
+    <style>
+      body {
+        font-family: 'comic-sans';
+        font-size: 28px;
+        background: url("img.jpg");
+      }
+
+    .container {
+    height: 100%;
+    overflow: scroll;
+    }
+
+    .container__section {
+    /* Take full size */
+    height: 100%;
+    width: 100%;
+
+    /* Stick to the top */
+    position: sticky;
+    top: 0;
+}
+    </style>
+
+</head>
+
+<body>
+ <div class="container">
+     <section class="container__section">
+     <div class="login">
+	<h1 style="text-align:center; color:grey">Sentiment Based Product Recommendation System</h1>
+    <p style="text-align:center; color:grey">Enter User Name</p>
+    <form align="center" action="{{ url_for('predict')}}" method="post">
+    	<input type="text" style="text-align:center" name="Username" required="required" />
+        <br>
+        <button align="center" type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+    </form>
+    </div>
+     </section>
+     <section class="container__section">
+     {% for your_list_element in prediction_text %}
+        <p style="text-align:center; color:grey">{{ your_list_element }} </p>
+     {% endfor %}
+    </section>
+ </div>
+
+
+</body>
+</html>
