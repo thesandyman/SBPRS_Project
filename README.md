@@ -9,3 +9,5 @@ Models and engines used:
   Item-Item based collaborative system
   User-User baased collaborative system
 Languages: Python and HTML
+
+All the files created are for deployment in FLask and Heroku.
